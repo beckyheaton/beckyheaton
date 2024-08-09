@@ -1,0 +1,70 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    font-family: Andale Mono, sans-serif;
+    color: #333;
+    width: calc(100vw - 100px);
+    text-align: left;
+    font-size: 0.8rem; /* Reduce the font size */
+    z-index: 1;
+    line-height: 0.5em; /* Adjust line-height to make font more squat */
+    position: absolute;
+    top: 30px; /* Adjust top position if needed */
+    left: 30px; /* Adjust left position if needed */
+    cursor: pointer;
+    letter-spacing: -1px; /* Adjust letter-spacing if needed */
+}
+
+.split-background {
+    height: 100%;
+    width: 100%;
+    background: url('../images/sparklingOcean.png') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 30px; /* Adjust as needed */
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    font-family: Andale Mono, sans-serif;
+    color: rgb(232, 227, 233);
+    font-size: 1.5rem; /* Reduce the font size */
+    z-index: 1;
+    line-height: 0.7em; /* Adjust line-height to make font more squat */
+    letter-spacing: -2.5px; /* Adjust letter-spacing if needed */
+    margin: 0;
+}
+
+footer .links {
+    position: absolute;
+    bottom: 0;
+    right: 30px; /* Adjust right position if needed */
+    text-align: right;
+}
+
+footer .links a {
+    font-family: Andale Mono, sans-serif;
+    color: rgb(232, 227, 233);
+    font-size: 1.5rem;
+    z-index: 1;
+    line-height: 0.7em;
+    letter-spacing: -2.5px;
+    margin-left: 10px; /* Space between links */
+    text-decoration: none;
+}
+
+footer .links a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
