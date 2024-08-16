@@ -6,13 +6,30 @@
     <title>Becky Heaton</title>
     <link rel="icon" type="image/x-icon" href="images/swimming.ico">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Include your existing scripts -->
     <script defer src="js/scripts.js"></script>
+
+    <!-- Include the ripple plugin script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.ripples.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Apply the ripple effect to the background
+            $('body').ripples({
+                resolution: 512,
+                dropRadius: 20,
+                perturbance: 0.04,
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
         <h1>becky heaton</h1>
     </header>
-    <div class="split-background"></div>
+    <img src="images/edoFurin.jpg" alt="Edo Furin" id="edoFurin">
     <footer>
         <p>thanks for visiting my website</p>
         <div class="links">
