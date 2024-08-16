@@ -43,7 +43,7 @@ header {
     position: absolute;
     top: 30px;
     right: 30px;
-    width: 50px; /* Adjust size as needed */
+    width: 100px; /* Adjust size as needed */
     height: auto;
     cursor: pointer;
 }
