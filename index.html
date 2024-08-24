@@ -6,32 +6,21 @@
     <title>Becky Heaton</title>
     <link rel="icon" type="image/x-icon" href="images/swimming.ico">
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Include your existing scripts -->
-    <script defer src="js/scripts.js"></script>
-
-    <!-- Include the ripple plugin script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/jquery.ripples.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            // Apply the ripple effect to the background
-            $('body').ripples({
-                resolution: 512,
-                dropRadius: 20,
-                perturbance: 0.04,
-            });
-        });
-    </script>
+    <script defer src="js/scripts.js"></script> 
 </head>
 <body>
     <header>
         <h1>becky heaton</h1>
+        <p id="soundButton">turn sound on</p>
     </header>
-    <img src="images/edoFurin4.png" alt="Edo Furin" id="edoFurin">
+    <main>
+        <aside id="artwork-list">
+        </aside>
+    </main>
     <footer>
-        <p>thanks for visiting my website</p>
+        <p>thank you for visiting my website</p>
         <div class="links">
             <a href="mailto:becky.a.heaton@outlook.com">email</a>
             <a href="https://www.instagram.com/beckythekid/" target="_blank">instagram</a>

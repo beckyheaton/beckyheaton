@@ -1,19 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const edoFurinImage = document.getElementById('edoFurin');
-    const hoverSound = new Audio('sounds/edoFurin.wav');
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script loaded and running"); // Debugging marker
+    // =======================
+    // Sound Button Setup
+    // =======================
+    const soundButton = document.getElementById('soundButton');
     const clickSound = new Audio('sounds/imaginaryBeach.wav');
-    clickSound.loop = true; // Set the audio to loop
-    let isPlaying = { value: false }; // Using an object to maintain reference in the function
+    const hoverSound = new Audio('sounds/edoFurin.wav'); // Load the hover sound
+    clickSound.loop = true; // Ensure the sound loops continuously
+    console.log(soundButton); // Check if the element is correctly retrieved
+    let isSoundOn = false;
 
-    // Attach event listeners
-    edoFurinImage.addEventListener('mouseover', function() {
-        playHoverSound(hoverSound);
+    // Add click event listener
+    soundButton.addEventListener('click', function() {
+        console.log("Sound button clicked"); // Debugging marker
+        if (isSoundOn) {
+            soundButton.textContent = "turn sound on";
+            clickSound.muted = true; // Mute the sound
+        } else {
+            soundButton.textContent = "turn sound off";
+            clickSound.muted = false; // Unmute the sound
+            clickSound.play(); // Ensure the sound is playing when unmuted
+        }
+
+        // Toggle the state
+        isSoundOn = !isSoundOn;
+    }); 
+
+    // Add 'hover' (mouseover) event listener 
+    soundButton.addEventListener('mouseover', function() {
+        hoverSound.play(); // Play the hover sound
     });
 
-    edoFurinImage.addEventListener('click', function() {
-        toggleClickSound(clickSound, isPlaying);
-    });
 
+    // =======================
+    // Ripple Effect Setup
+    // =======================
     // Initialize ripples without mouse interaction
     $('body').ripples({
         resolution: 512,
@@ -43,17 +64,5 @@ document.addEventListener("DOMContentLoaded", function() {
     function triggerRipple(x, y) {
         $('body').ripples('drop', x, y, 20, 0.04);
     }
+
 });
-
-function playHoverSound(hoverSound) {
-    hoverSound.play();
-}
-
-function toggleClickSound(clickSound, isPlaying) {
-    if (isPlaying.value) {
-        clickSound.pause();
-    } else {
-        clickSound.play();
-    }
-    isPlaying.value = !isPlaying.value;
-}

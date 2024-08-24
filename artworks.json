@@ -1,0 +1,80 @@
+{
+    "artworks": [
+        {
+            "title": "Barnaby",
+            "date": "2024",
+            "category": "websites",
+            "url": "https://beckyheaton.github.io/barnaby/",
+            "description": "My Dad."
+        },
+        {
+            "title": "Kites",
+            "date": "2024",
+            "category": "websites",
+            "url": "https://beckyheaton.github.io/Nic/",
+            "description": "Kites are magical flying machines."
+        },
+        {
+            "title": "My World",
+            "date": "2024",
+            "category": "websites",
+            "url": "https://beckyheaton.github.io/myworld/",
+            "description": "A world of my own."
+        },
+        {
+            "title": "Escape From Havelock Ave",
+            "date": "2023",
+            "category": "games",
+            "url": "https://mabelhay.itch.io/escape-from-havelock-ave-vers-2",
+            "description": "A letter to Jane."
+        },
+        {
+            "title": "Letter to Jane",
+            "date": "2022",
+            "location": "Cofa",
+            "category": "films",
+            "image": "drape1.jpeg",
+            "description": "A letter to my friend Jane"
+        },  
+        {
+            "title": "Blunt Contact",
+            "date": "2021",
+            "location": "Cement Fondu",
+            "category": "films",
+            "image": "swimming.png",
+            "description": "Blunt Contact"
+        },
+        {
+            "title": "The Dream House",
+            "date": "2021",
+            "location": "Cofa",
+            "category": "films",
+            "image": "theDreamHouse.png",
+            "description": "Into my dream house."
+        },
+        {
+            "title": "Running",
+            "date": "2019",
+            "location": "Cofa",
+            "category": "films",
+            "image": "theDreamHouse.png",
+            "description": "Tara, running."
+        },
+        {
+            "title": "Haunted Houses",
+            "date": "2021",
+            "location": "Cofa",
+            "category": "photography",
+            "image": "hallway.jpg",
+            "description": "Haunted Houses."
+        },
+        {
+            "title": "Tethered",
+            "date": "2021",
+            "location": "Fatal Crush",
+            "category": "performances",
+            "image": "hallway.jpg",
+            "description": "I braid astrids hair."
+        }
+    ]
+}

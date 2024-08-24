@@ -15,38 +15,86 @@ html, body {
 header {
     font-family: Andale Mono, sans-serif;
     color: #333;
-    width: calc(100vw - 100px);
-    text-align: left;
-    font-size: 0.8rem; /* Reduce the font size */
+    width: calc(100vw - 60px); /* Adjust the width to account for both left and right margins */
     z-index: 1;
-    line-height: 0.5em; /* Adjust line-height to make font more squat */
     position: absolute;
-    top: 30px; /* Adjust top position if needed */
-    left: 30px; /* Adjust left position if needed */
+    top: 30px; 
+    left: 30px; 
     cursor: pointer;
-    letter-spacing: -1px; /* Adjust letter-spacing if needed */
+    display: flex; /* Flexbox makes aligning elements easier */
+    align-items: flex-end; /* Align elements by their baselines */
+    justify-content: space-between; /* Pushes the h1 and soundButton to opposite sides */
 }
 
-.split-background {
-    height: 100%;
-    width: 100%;
-    background: url('../images/sparklingOcean.png') no-repeat center center/cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-attachment: fixed; /* Keep background fixed while moving */
-    overflow: hidden; /* Prevents scroll bars */
-    z-index: -1; /* Make sure the background is behind other elements */
+header h1 {
+    font-weight: normal; /* Remove the default bold */
+    margin: 0;
+    letter-spacing: -1px;
+    font-size: 1.5rem;
 }
 
-#edoFurin {
+#soundButton {
+    font-family: Andale Mono, sans-serif;
+    font-size: 1.2rem; /* Matches the header's font-size */
+    letter-spacing: -1px;
+    color: #333;
+    cursor: pointer;
+    z-index: 2;
+    margin: 0;
+}
+
+
+/* #edoFurin {
     position: absolute;
     top: 30px;
     right: 30px;
-    width: 100px; /* Adjust size as needed */
+    width: 100px;
     height: auto;
     cursor: pointer;
+} */
+
+
+main {
+    display: flex;
+    width: 100%;
+    margin-top: 150px; /* Added margin to move the artwork list down */
 }
+
+#artwork-list {
+    width: 300px;
+    padding: 20px;
+    user-select: none;
+    color: rgb(232, 227, 233);
+    position: relative;
+    margin-left: 50px; /* Adjust how far from the left edge */
+    margin-top: 1px; /* Adjust how far from the top */
+}
+
+#artwork-list h2 {
+    margin-top: 20px;
+    font-size: 1.2em; /* Match the font size of artwork names */
+    font-weight: bold; /* Make category headers bold */
+    color: inherit; /* Ensure the color can be dynamically changed */
+}
+
+#artwork-list a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust font size as needed */
+    white-space: nowrap; /* Prevent text from wrapping */
+    letter-spacing: 0.5px;
+    color: inherit; /* Ensure the color can be dynamically changed */
+}
+
+#artwork-list a:hover {
+    text-decoration: underline;
+}
+
+#artwork-list em {
+    font-style: italic;
+}
+
 
 footer {
     position: absolute;
@@ -84,5 +132,5 @@ footer .links a {
 }
 
 footer .links a:hover {
-    text-decoration: underline; /* Optional hover effect */
+    text-decoration: underline;
 }
