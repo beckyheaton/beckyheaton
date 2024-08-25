@@ -13,35 +13,35 @@ html, body {
 
 
 header {
+    position: fixed; /* Fixes the header at the top of the viewport */
+    top: 30px; /* Positions the header 30px from the top */
+    left: 30px; /* Positions the header 30px from the left */
+    right: 30px; /* Positions the header 30px from the right */
+    z-index: 1;
+    width: calc(100% - 60px); /* Ensures the header spans the width minus the margins */
     font-family: Andale Mono, sans-serif;
     color: #333;
-    width: calc(100vw - 60px); /* Adjust the width to account for both left and right margins */
-    z-index: 1;
-    position: absolute;
-    top: 30px; 
-    left: 30px; 
-    cursor: pointer;
-    display: flex; /* Flexbox makes aligning elements easier */
-    align-items: flex-end; /* Align elements by their baselines */
-    justify-content: space-between; /* Pushes the h1 and soundButton to opposite sides */
+    display: flex;
+    align-items: center; /* Vertically aligns the h1 and soundButton */
+    justify-content: space-between; /* Positions h1 and soundButton on opposite sides */
+    box-sizing: border-box;
 }
 
 header h1 {
-    font-weight: normal; /* Remove the default bold */
+    font-weight: normal; /* Removes the default bold */
     margin: 0;
     letter-spacing: -1px;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 #soundButton {
-    font-family: Andale Mono, sans-serif;
-    font-size: 1.2rem; /* Matches the header's font-size */
+    font-size: 1.5rem; /* Matches the header's font-size */
     letter-spacing: -1px;
-    color: #333;
     cursor: pointer;
-    z-index: 2;
     margin: 0;
 }
+
 
 
 /* #edoFurin {
@@ -97,40 +97,44 @@ main {
 
 
 footer {
-    position: absolute;
-    bottom: 30px; /* Adjust as needed */
+    position: fixed; /* Change to fixed positioning */
+    bottom: 30px;
     width: 100%;
+    color: rgb(232, 227, 233);
+    font-family: Andale Mono, sans-serif;
+    font-weight: normal;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    padding: 0 30px;
+    box-sizing: border-box;
     text-align: center;
 }
 
 footer p {
-    font-family: Andale Mono, sans-serif;
-    color: rgb(232, 227, 233);
-    font-size: 1.5rem; /* Reduce the font size */
-    z-index: 1;
-    line-height: 0.7em; /* Adjust line-height to make font more squat */
-    letter-spacing: -2.5px; /* Adjust letter-spacing if needed */
+    font-size: 1.5rem;
     margin: 0;
+    flex: 1; /* Allow the paragraph to take up available space */
 }
 
 footer .links {
     position: absolute;
-    bottom: 0;
-    right: 30px; /* Adjust right position if needed */
-    text-align: right;
+    right: 30px; /* Align the links to the right */
+    display: flex;
+    gap: 10px; /* Space between the links */
 }
 
 footer .links a {
     font-family: Andale Mono, sans-serif;
     color: rgb(232, 227, 233);
     font-size: 1.5rem;
-    z-index: 1;
-    line-height: 0.7em;
-    letter-spacing: -2.5px;
-    margin-left: 10px; /* Space between links */
+    letter-spacing: -1px;
     text-decoration: none;
+    font-weight: normal;
 }
 
 footer .links a:hover {
     text-decoration: underline;
 }
+
