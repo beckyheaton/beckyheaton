@@ -65,4 +65,33 @@ document.addEventListener('DOMContentLoaded', function() {
         $('body').ripples('drop', x, y, 20, 0.04);
     }
 
+    // =======================
+    // Artwork List Setup
+    // =======================
+    const categories = ["websites", "games", "films", "photography", "performances"];
+    fetch('artworks.json')
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById('artwork-list');
+            categories.forEach(category => {
+                const categoryHeader = document.createElement('h2');
+                categoryHeader.textContent = category;
+                list.appendChild(categoryHeader);
+
+                const categoryArtworks = data.artworks.filter(artwork => artwork.category.toLowerCase() === category);
+                categoryArtworks.forEach(artwork => {
+                    const link = document.createElement('a');
+                    if (category === "websites" || category === "games") {
+                        link.href = artwork.url;
+                        link.target = "_blank"; // Open link in a new tab
+                    } else {
+                        link.href = `artwork.html?title=${encodeURIComponent(artwork.title)}`;
+                    }
+                    link.innerHTML = `${artwork.date} <em>${artwork.title}</em> ${artwork.location || ''}`;
+                    list.appendChild(link);
+                });
+            });
+        })
+        .catch(error => console.error('Error loading artworks:', error));
+
 });

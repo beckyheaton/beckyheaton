@@ -11,6 +11,7 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
+/* //////// Header //////// */
 
 header {
     position: fixed; /* Fixes the header at the top of the viewport */
@@ -35,6 +36,8 @@ header h1 {
     cursor: pointer;
 }
 
+/* //////// Sound Button //////// */
+
 #soundButton {
     font-size: 1.5rem; /* Matches the header's font-size */
     letter-spacing: -1px;
@@ -54,25 +57,44 @@ header h1 {
 } */
 
 
-main {
-    display: flex;
-    width: 100%;
-    margin-top: 150px; /* Added margin to move the artwork list down */
+/* //////// Artwork List //////// */
+
+:root {
+    --artwork-container-left: 30px; /* Define the variable for the left position */
+    --artwork-container-top: 13.7%; /* Define the variable for the top position */
+}
+
+.artwork-container {
+    position: fixed; /* Position the container relative to the viewport */
+    left: var(--artwork-container-left); /* Control the horizontal position with this variable */
+    top: var(--artwork-container-top); /* Control the vertical position with this variable */
+    width: 500px; /* Set your desired width */
+    height: 500px; /* Set your desired height */
+    overflow-y: hidden; /* Hide overflow by default */
+    z-index: 10; /* Ensure it stays on top */
+    background: transparent; /* Transparent background */
+    border: none; /* Remove borders */
+    scrollbar-width: none; /* Firefox: Hides scrollbar */
+    -ms-overflow-style: none; /* Internet Explorer 10+: Hides scrollbar */
+}
+
+/* Scrollable Content */
+.artwork-container:hover {
+    overflow-y: auto; /* Enable vertical scrolling on hover */
 }
 
 #artwork-list {
-    width: 300px;
-    padding: 20px;
+    width: 100%; /* Make the list take up the full width of the container */
+    padding: 0px;
     user-select: none;
-    color: rgb(232, 227, 233);
-    position: relative;
-    margin-left: 50px; /* Adjust how far from the left edge */
-    margin-top: 1px; /* Adjust how far from the top */
+    color: #333;
+    margin: 0; /* Remove any margin to prevent it from affecting positioning */
+    text-align: left; /* Ensure the content is left-aligned */
 }
 
 #artwork-list h2 {
     margin-top: 20px;
-    font-size: 1.2em; /* Match the font size of artwork names */
+    font-size: 1.2rem; /* Match the font size of artwork names */
     font-weight: bold; /* Make category headers bold */
     color: inherit; /* Ensure the color can be dynamically changed */
 }
@@ -81,7 +103,7 @@ main {
     display: block;
     padding: 10px 0;
     text-decoration: none;
-    font-size: 1.2em; /* Adjust font size as needed */
+    font-size: 1.2rem; /* Adjust font size as needed */
     white-space: nowrap; /* Prevent text from wrapping */
     letter-spacing: 0.5px;
     color: inherit; /* Ensure the color can be dynamically changed */
@@ -95,6 +117,8 @@ main {
     font-style: italic;
 }
 
+
+/* //////// Footer //////// */
 
 footer {
     position: fixed; /* Change to fixed positioning */
