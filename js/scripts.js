@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded and running"); // Debugging marker
+
+
+    // =======================
+    // Becky Button
+    // =======================
+    const beckyButton = document.getElementById('beckyButton');
+
+    // Add a click event listener to reload the page
+    beckyButton.addEventListener('click', function() {
+        location.reload(); // Reloads the current page
+    });
+
     // =======================
     // Sound Button Setup
     // =======================
@@ -66,6 +78,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =======================
+    // Artwork Button
+    // =======================
+
+    const workButton = document.getElementById('work-button');
+    const artworkList = document.getElementById('artwork-list');
+    
+    // Toggle the visibility of the artwork list when the button is clicked
+    workButton.addEventListener('click', function() {
+        if (artworkList.style.display === 'none' || artworkList.style.display === '') {
+            artworkList.style.display = 'block'; // Show the artwork list
+            // workButton.textContent = 'hide work'; // Change button text
+        } else {
+            artworkList.style.display = 'none'; // Hide the artwork list
+            workButton.textContent = 'work'; // Reset button text
+        }
+    });
+
+    // =======================
     // Artwork List Setup
     // =======================
     const categories = ["websites", "games", "films", "photography", "performances"];
@@ -73,25 +103,26 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const list = document.getElementById('artwork-list');
+    
             categories.forEach(category => {
                 const categoryHeader = document.createElement('h2');
                 categoryHeader.textContent = category;
                 list.appendChild(categoryHeader);
-
+    
                 const categoryArtworks = data.artworks.filter(artwork => artwork.category.toLowerCase() === category);
                 categoryArtworks.forEach(artwork => {
                     const link = document.createElement('a');
-                    if (category === "websites" || category === "games") {
-                        link.href = artwork.url;
-                        link.target = "_blank"; // Open link in a new tab
-                    } else {
-                        link.href = `artwork.html?title=${encodeURIComponent(artwork.title)}`;
-                    }
+                    link.href = '#'; // Prevents the link from navigating anywhere
                     link.innerHTML = `${artwork.date} <em>${artwork.title}</em> ${artwork.location || ''}`;
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevents any action from happening on click
+                        // No further action needed for now
+                    });
                     list.appendChild(link);
                 });
             });
         })
         .catch(error => console.error('Error loading artworks:', error));
+    
 
 });

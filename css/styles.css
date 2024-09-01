@@ -8,7 +8,7 @@ html, body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Andale Mono, sans-serif;
 }
 
 /* //////// Header //////// */
@@ -20,7 +20,6 @@ header {
     right: 30px; /* Positions the header 30px from the right */
     z-index: 1;
     width: calc(100% - 60px); /* Ensures the header spans the width minus the margins */
-    font-family: Andale Mono, sans-serif;
     color: #333;
     display: flex;
     align-items: center; /* Vertically aligns the h1 and soundButton */
@@ -28,24 +27,37 @@ header {
     box-sizing: border-box;
 }
 
-header h1 {
-    font-weight: normal; /* Removes the default bold */
-    margin: 0;
+/* //////// Becky Button //////// */
+
+#beckyButton {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%); /* Shift the container left by 50% of its own width */
+    font-size: 1.5rem; 
     letter-spacing: -1px;
-    font-size: 1.5rem;
     cursor: pointer;
+    margin: 0;
+    text-align: center;
+    color: #333;
+    z-index: 10;
 }
 
 /* //////// Sound Button //////// */
-
 #soundButton {
-    font-size: 1.5rem; /* Matches the header's font-size */
+    font-size: 1.5rem; 
     letter-spacing: -1px;
     cursor: pointer;
     margin: 0;
 }
 
-
+/* //////// Work Button //////// */
+#work-button {
+    font-size: 1.5rem; 
+    letter-spacing: -1px;
+    cursor: pointer;
+    margin: 0;
+}
 
 /* #edoFurin {
     position: absolute;
@@ -61,7 +73,7 @@ header h1 {
 
 :root {
     --artwork-container-left: 30px; /* Define the variable for the left position */
-    --artwork-container-top: 13.7%; /* Define the variable for the top position */
+    --artwork-container-top: 7%; /* Define the variable for the top position */
 }
 
 .artwork-container {
@@ -69,23 +81,30 @@ header h1 {
     left: var(--artwork-container-left); /* Control the horizontal position with this variable */
     top: var(--artwork-container-top); /* Control the vertical position with this variable */
     width: 500px; /* Set your desired width */
-    height: 500px; /* Set your desired height */
+    height: 575px; /* Set your desired height */
     overflow-y: hidden; /* Hide overflow by default */
     z-index: 10; /* Ensure it stays on top */
     background: transparent; /* Transparent background */
     border: none; /* Remove borders */
     scrollbar-width: none; /* Firefox: Hides scrollbar */
     -ms-overflow-style: none; /* Internet Explorer 10+: Hides scrollbar */
+    
+    /* Create the blur effect at the top and bottom */
+    mask-image: linear-gradient(to bottom, 
+        transparent, 
+        black 10%, 
+        black 90%, 
+        transparent);
 }
 
-/* Scrollable Content */
 .artwork-container:hover {
     overflow-y: auto; /* Enable vertical scrolling on hover */
 }
 
 #artwork-list {
+    display: none; /* Initially hide the list */
     width: 100%; /* Make the list take up the full width of the container */
-    padding: 0px;
+    padding: 25px 0; /* Add padding to the top and bottom */  /* ADDED */
     user-select: none;
     color: #333;
     margin: 0; /* Remove any margin to prevent it from affecting positioning */
@@ -95,8 +114,9 @@ header h1 {
 #artwork-list h2 {
     margin-top: 20px;
     font-size: 1.2rem; /* Match the font size of artwork names */
-    font-weight: bold; /* Make category headers bold */
-    color: inherit; /* Ensure the color can be dynamically changed */
+    font-weight: bold;
+    font-family: Andale Mono, sans-serif;
+    letter-spacing: -1px;
 }
 
 #artwork-list a {
@@ -105,8 +125,9 @@ header h1 {
     text-decoration: none;
     font-size: 1.2rem; /* Adjust font size as needed */
     white-space: nowrap; /* Prevent text from wrapping */
-    letter-spacing: 0.5px;
+    letter-spacing: -1px;
     color: inherit; /* Ensure the color can be dynamically changed */
+    font-family: Andale Mono, sans-serif;
 }
 
 #artwork-list a:hover {
@@ -118,16 +139,31 @@ header h1 {
 }
 
 
+/* //////// About Button //////// */
+
+#aboutButton {
+    position: fixed; /* Position relative to the viewport */
+    top: 50%; 
+    right: 29px; 
+    transform: rotate(90deg) translateX(50%); /* Rotate text and adjust position */
+    transform-origin: top right; /* Ensure rotation happens around the right edge */
+    /* transform: translateX(-50%); */
+    color: #333;
+    text-align: right;
+    cursor: pointer;
+    font-family: Andale Mono, sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    z-index: 11;
+}   
+
+
 /* //////// Footer //////// */
 
 footer {
     position: fixed; /* Change to fixed positioning */
     bottom: 30px;
     width: 100%;
-    color: rgb(232, 227, 233);
-    font-family: Andale Mono, sans-serif;
-    font-weight: normal;
-    letter-spacing: -1px;
     display: flex;
     align-items: center;
     justify-content: center; /* Center content horizontally */
@@ -136,22 +172,15 @@ footer {
     text-align: center;
 }
 
-footer p {
-    font-size: 1.5rem;
-    margin: 0;
-    flex: 1; /* Allow the paragraph to take up available space */
-}
-
 footer .links {
     position: absolute;
-    right: 30px; /* Align the links to the right */
     display: flex;
-    gap: 10px; /* Space between the links */
+    gap: 15px; /* Space between the links */
 }
 
 footer .links a {
     font-family: Andale Mono, sans-serif;
-    color: rgb(232, 227, 233);
+    color: rgb(245, 237, 237); /* Text color */
     font-size: 1.5rem;
     letter-spacing: -1px;
     text-decoration: none;
