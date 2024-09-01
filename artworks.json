@@ -31,7 +31,6 @@
         {
             "title": "Letter to Jane",
             "date": "2022",
-            "location": "Cofa",
             "category": "films",
             "image": "drape1.jpeg",
             "description": "A letter to my friend Jane"
@@ -47,7 +46,6 @@
         {
             "title": "The Dream House",
             "date": "2021",
-            "location": "Cofa",
             "category": "films",
             "image": "theDreamHouse.png",
             "description": "Into my dream house."
@@ -55,7 +53,6 @@
         {
             "title": "Running",
             "date": "2019",
-            "location": "Cofa",
             "category": "films",
             "image": "theDreamHouse.png",
             "description": "Tara, running."
@@ -63,8 +60,8 @@
         {
             "title": "Haunted Houses",
             "date": "2021",
-            "location": "Cofa",
-            "category": "photography",
+            "location": "St Vincent's Hospital",
+            "category": "photographs",
             "image": "hallway.jpg",
             "description": "Haunted Houses."
         },
