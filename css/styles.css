@@ -59,6 +59,23 @@ header {
     margin: 0;
 }
 
+/* //////// Not Finished Message //////// */
+#notFinishedMessage {
+    position: absolute;
+    font-size: 1.5rem; 
+    letter-spacing: -1px;
+    color: #96a2af;
+    margin: 0;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Shift the element back by 50% of its own width and height */
+    text-align: center;
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
 /* #edoFurin {
     position: absolute;
     top: 30px;
@@ -104,39 +121,39 @@ header {
 #artwork-list {
     display: none; /* Initially hide the list */
     width: 100%; /* Make the list take up the full width of the container */
-    padding: 25px 0; /* Add padding to the top and bottom */  /* ADDED */
+    padding-top: 30px; /* Adjusted padding property */
+    padding-bottom: 60px; /* Extra padding at the bottom for better scrolling */
     user-select: none;
-    color: #333;
     margin: 0; /* Remove any margin to prevent it from affecting positioning */
     text-align: left; /* Ensure the content is left-aligned */
+    color: #333; /* Ensures consistent color */
+    font-family: Andale Mono, sans-serif;
+    font-size: 1.2rem; /* Consistent font size */
+    letter-spacing: -1px; /* Consistent letter spacing */
 }
 
 #artwork-list h2 {
     margin-top: 20px;
-    font-size: 1.2rem; /* Match the font size of artwork names */
+    font-size: inherit;
     font-weight: bold;
-    font-family: Andale Mono, sans-serif;
-    letter-spacing: -1px;
 }
 
-#artwork-list a {
+#artwork-list .artwork-item {
     display: block;
     padding: 10px 0;
-    text-decoration: none;
-    font-size: 1.2rem; /* Adjust font size as needed */
     white-space: nowrap; /* Prevent text from wrapping */
-    letter-spacing: -1px;
-    color: inherit; /* Ensure the color can be dynamically changed */
-    font-family: Andale Mono, sans-serif;
 }
 
-#artwork-list a:hover {
+#artwork-list .artwork-item a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer; /* Add pointer cursor to clickable links */
+}
+
+#artwork-list .artwork-item a:hover {
     text-decoration: underline;
 }
 
-#artwork-list em {
-    font-style: italic;
-}
 
 
 /* //////// About Button //////// */

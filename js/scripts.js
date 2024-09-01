@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
     workButton.addEventListener('click', function() {
         if (artworkList.style.display === 'none' || artworkList.style.display === '') {
             artworkList.style.display = 'block'; // Show the artwork list
-            // workButton.textContent = 'hide work'; // Change button text
         } else {
             artworkList.style.display = 'none'; // Hide the artwork list
             workButton.textContent = 'work'; // Reset button text
@@ -111,18 +110,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
                 const categoryArtworks = data.artworks.filter(artwork => artwork.category.toLowerCase() === category);
                 categoryArtworks.forEach(artwork => {
-                    const link = document.createElement('a');
-                    link.href = '#'; // Prevents the link from navigating anywhere
-                    link.innerHTML = `${artwork.date} <em>${artwork.title}</em> ${artwork.location || ''}`;
-                    link.addEventListener('click', function(event) {
-                        event.preventDefault(); // Prevents any action from happening on click
-                        // No further action needed for now
-                    });
-                    list.appendChild(link);
+                    const listItem = document.createElement('div');
+                    listItem.classList.add('artwork-item'); // Add a class for consistent styling
+    
+                    if (artwork.url) {
+                        const link = document.createElement('a');
+                        link.href = artwork.url; // Only add the URL if it exists
+                        link.target = "_blank"; // Open in a new tab
+                        link.innerHTML = `${artwork.date} <em>${artwork.title}</em> ${artwork.location || ''}`;
+                        listItem.appendChild(link);
+                    } else {
+                        listItem.innerHTML = `${artwork.date} <em>${artwork.title}</em> ${artwork.location || ''}`;
+                    }
+    
+                    list.appendChild(listItem);
                 });
             });
         })
         .catch(error => console.error('Error loading artworks:', error));
+    
     
 
 });
