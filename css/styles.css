@@ -21,6 +21,7 @@ html, body {
     #mobileMessage {
         display: block !important;
         font-size: 1rem;
+        font-family: Andale Mono, sans-serif;
         color: #333; /* Change this to the color you prefer */
         font-style: italic;
         padding: 0px;
