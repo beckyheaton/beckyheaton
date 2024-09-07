@@ -22,6 +22,7 @@ html, body {
         display: block !important;
         font-size: 1rem;
         color: #333; /* Change this to the color you prefer */
+        font-style: italic;
         padding: 0px;
         position: absolute;
         width: 90%;
