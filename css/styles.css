@@ -11,6 +11,42 @@ html, body {
     font-family: Andale Mono, sans-serif;
 }
 
+/* //////// Mobile View //////// */
+/* Hide everything except beckyButton and show the mobile message on small screens */
+@media only screen and (max-width: 600px) {
+    header, main, footer, #aboutText, #artwork-list, #soundButton, #work-button, #aboutButton {
+        display: none !important; /* Hide all elements */
+    }
+
+    #mobileMessage {
+        display: block !important;
+        font-size: 1rem;
+        color: #333; /* Change this to the color you prefer */
+        padding: 0px;
+        position: absolute;
+        width: 90%;
+        height: auto;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        user-select: none; /* Disable text selection */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        text-align: left; /* Justify the text to both left and right */
+        line-height: 1.5rem;
+        overflow-wrap: break-word; /* Make sure long words break properly */
+    }
+
+    body {
+        background-size: cover;
+        background-position: 50% 0;
+        overflow: hidden; /* Ensure no overflow on mobile */
+    }
+}
+
+
 /* //////// Header //////// */
 
 header {
