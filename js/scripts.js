@@ -129,6 +129,33 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error loading artworks:', error));
     
-    
+    // =======================
+    // About Button Toggle
+    // =======================
+    const aboutButton = document.getElementById('aboutButton');
+    const aboutText = document.getElementById('aboutText');
 
+    // Initially hide the aboutText
+    aboutText.style.display = 'none';
+
+    // Toggle visibility of aboutText when aboutButton is clicked
+    aboutButton.addEventListener('click', function() {
+        if (aboutText.style.display === 'none' || aboutText.style.display === '') {
+            aboutText.style.display = 'block'; // Show the aboutText
+        } else {
+            aboutText.style.display = 'none'; // Hide the aboutText
+        }
+    });
+    
+    // =======================
+    // Toggle Text
+    // =======================
+    const toggleText = document.getElementById('toggleText');
+    const words = ['collaborate', 'chat', 'gossip'];
+    let currentIndex = 0;
+
+    toggleText.addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % words.length;
+      toggleText.textContent = words[currentIndex];
+    });
 });

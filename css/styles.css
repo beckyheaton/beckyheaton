@@ -59,6 +59,63 @@ header {
     margin: 0;
 }
 
+/* //////// About Button //////// */
+
+#aboutButton {
+    position: fixed; /* Position relative to the viewport */
+    top: 50%; 
+    right: 29px; 
+    transform: rotate(90deg) translateX(50%); /* Rotate text and adjust position */
+    transform-origin: top right; /* Ensure rotation happens around the right edge */
+    /* transform: translateX(-50%); */
+    color: #333;
+    text-align: right;
+    cursor: pointer;
+    font-family: Andale Mono, sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    z-index: 11;
+}  
+
+/* //////// About Text //////// */
+#aboutText {
+    position: absolute;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    letter-spacing: -1px;
+    color: #333;
+    top: 21px;
+    left: 55.55%;
+    width: 575px; /* Set the initial width of the box */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 13px; /* Add some padding for aesthetics */
+    border: 1px transparent #333; /* Optional: Add a border around the box */
+    box-sizing: border-box; /* Ensure padding is included in width/height */
+    overflow-wrap: break-word; /* Make sure long words break properly */
+    resize: both; 
+    overflow: auto; /* Show scroll if the content exceeds the box */
+    background-color: transparent; /* Optional: Background color for the box */
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    text-align: justify; /* Justify the text to both left and right */
+}
+
+#toggleText {
+    cursor: pointer; /* Changes cursor to pointer */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+  
+  #toggleText:hover {
+    color: rgb(0, 253, 114);      /* Change color when hovered */
+  }
+
+
+
+
 /* //////// Not Finished Message //////// */
 #notFinishedMessage {
     position: absolute;
@@ -153,26 +210,7 @@ header {
 #artwork-list .artwork-item a:hover {
     text-decoration: underline;
 }
-
-
-
-/* //////// About Button //////// */
-
-#aboutButton {
-    position: fixed; /* Position relative to the viewport */
-    top: 50%; 
-    right: 29px; 
-    transform: rotate(90deg) translateX(50%); /* Rotate text and adjust position */
-    transform-origin: top right; /* Ensure rotation happens around the right edge */
-    /* transform: translateX(-50%); */
-    color: #333;
-    text-align: right;
-    cursor: pointer;
-    font-family: Andale Mono, sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: -1px;
-    z-index: 11;
-}   
+ 
 
 
 /* //////// Footer //////// */
