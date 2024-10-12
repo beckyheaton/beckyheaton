@@ -158,4 +158,15 @@ document.addEventListener('DOMContentLoaded', function() {
       currentIndex = (currentIndex + 1) % words.length;
       toggleText.textContent = words[currentIndex];
     });
+
+    // =======================
+    // Hide email 
+    // =======================
+    emailE = 'gmail.com'
+    emailE = ('a.beautiful.place01' + '@' + emailE)
+    const emailLinks = document.querySelectorAll('.emailLink');
+    emailLinks.forEach(link => {
+        link.href = 'mailto:' + emailE;
+        link.innerText = 'e-mail';
+    });
 });
