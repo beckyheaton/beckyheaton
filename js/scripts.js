@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // =======================
     // Artwork List Setup
     // =======================
-    const categories = ["websites", "games", "films", "photographs", "performances"];
+    const categories = ["websites", "performances", "games", "films", "photographs"];
     fetch('artworks.json')
         .then(response => response.json())
         .then(data => {
